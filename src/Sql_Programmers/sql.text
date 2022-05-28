@@ -16,3 +16,8 @@ distict : 그룹으로 매핑만 / 보다 적은 데이터만 제공시 사용
 
 ex) 하단의 코드는 1/1/1/1/1/ 같은 결과가 나온다. 실제 데이터가 아닌 그룹바이+ count는 레코드가 그룹화 될 수를 뜨워준다.
 select count(name) from animal_ins group by name ;
+
+//20220528
+SELECT name , count(name)  from animal_ins group by name having count(name) > 1 order by name;
+
+group by 는 having 절로 조건을 줘야 한다!
