@@ -1,34 +1,41 @@
 package Algorithm_CodeUp;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.Scanner;
 
-public class q1090 {
+public class q1091 {
     public static void main(String[] args) {
         //! my code
-//        Scanner sc = new Scanner(System.in);
-//        int s = sc.nextInt();
-//        int cha = sc.nextInt();
-//        int n = sc.nextInt();
+        Scanner sc = new Scanner(System.in);
+        long s = sc.nextInt();
+        int cha = sc.nextInt();
+        int n = sc.nextInt();
+        int nn = sc.nextInt();
+
+
+//        long another = s ;
+//        for (int i = 0; i < nn -1; i++) {
 //
-//        long another = s * cha;
-//
-//        for (int i = 0; i < n - 2; i++) {
-//            another *= cha;
+//       another =  (another *cha) +n ;
 //        }
-//        //another를 int 로 해주었더니 오류가 났다.
-//        // int는 최대 10자리까지 표현할 수 있어서 그 이상은 long 타입으로 변경해주었더니 정답이었다.
-//        System.out.println(another);
+
 
 
     // ! another person code
-    Scanner sc = new Scanner(System.in);
-    int s = sc.nextInt();
-    int cha = sc.nextInt();
-    int n = sc.nextInt();
-    long result = 0;
-    //pow 제곱함수를 사용하여 구함, 기본 return 값이 double 이라 정답과 맞지 않는 형식이므로 long 타입으로 변경하여 전환
-    result = (long) (s * Math.pow(cha,n-1));
-        System.out.println(result);
+
+
+        ArrayList<Long> arrl = new ArrayList ();
+        arrl.add(s);
+        long another =  0;
+        for (int i = 0; i < nn -1; i++) {
+            another = arrl.get(i) * cha + n;
+            arrl.add(another);
+        }
+        System.out.println(arrl.get(n-1));
+
+
 
     }
 

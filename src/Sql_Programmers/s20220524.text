@@ -21,3 +21,9 @@ select count(name) from animal_ins group by name ;
 SELECT name , count(name)  from animal_ins group by name having count(name) > 1 order by name;
 
 group by 는 having 절로 조건을 줘야 한다!
+
+//20220529
+SELECT  hour(datetime) as hour, count(datetime) as count from animal_outs  group by hour(datetime)
+having hour >= 9 and hour <=19 order by hour;
+
+SELECT  hour(datetime) as hour, count(datetime) as count from animal_outs where hour(datetime) >= 9 and hour(datetime) <= 19  group by hour(datetime) order by hour(datetime);
