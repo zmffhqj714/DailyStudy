@@ -9,14 +9,10 @@ public class q1096 {
 
         int i, j, len, direction, x, y, x2, y2;
         int x1 = sc.nextInt();
-
         int y1 = sc.nextInt();
-
         int[][] index = new int[x1][y1];
-
         int s = sc.nextInt();
         sc.nextLine();
-
         for (i = 0; i < s; i++) {
 
             len = sc.nextInt();
