@@ -31,3 +31,16 @@ SELECT  hour(datetime) as hour, count(datetime) as count from animal_outs where 
 //20220530
 SET @HOUR = -1;
 SELECT (@HOUR := @HOUR +1) AS HOUR, (SELECT COUNT(HOUR(DATETIME)) FROM ANIMAL_OUTS WHERE HOUR(DATETIME) = @HOUR) AS COUNT FROM ANIMAL_OUTS WHERE @HOUR < 23
+
+//20220531
+SELECT animal_id from animal_ins where name is null order by animal_id;
+ SELECT animal_id from animal_ins where name is not null order by animal_id;
+  SELECT animal_type, ifnull(name,'No name'), sex_upon_intake from animal_ins  order by animal_id;
+
+  //join
+  SELECT A.ANIMAL_ID, A.NAME
+  FROM ANIMAL_OUTS A
+  left join animal_ins i
+  on a.animal_id = i.animal_id
+  where i.animal_id is null
+  order by a.animal_id;
