@@ -38,9 +38,22 @@ SELECT animal_id from animal_ins where name is null order by animal_id;
   SELECT animal_type, ifnull(name,'No name'), sex_upon_intake from animal_ins  order by animal_id;
 
   //join
+  //20220601
   SELECT A.ANIMAL_ID, A.NAME
   FROM ANIMAL_OUTS A
   left join animal_ins i
   on a.animal_id = i.animal_id
   where i.animal_id is null
   order by a.animal_id;
+
+  //20220602
+  SELECT o.animal_id, o.name from animal_outs o
+  inner join animal_ins i on  i.animal_id =  o.animal_id
+  where i.datetime > o.datetime order by i.datetime;
+
+  //20220603
+  SELECT A.NAME, A.DATETIME
+  FROM ANIMAL_INS A LEFT JOIN ANIMAL_OUTS B ON A.ANIMAL_ID = B.ANIMAL_ID
+  WHERE B.ANIMAL_ID IS NULL
+  ORDER BY A.DATETIME
+  LIMIT 3
