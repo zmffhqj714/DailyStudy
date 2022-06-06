@@ -57,3 +57,29 @@ SELECT animal_id from animal_ins where name is null order by animal_id;
   WHERE B.ANIMAL_ID IS NULL
   ORDER BY A.DATETIME
   LIMIT 3
+
+  //20220604
+  SELECT i.animal_id, i.animal_type, i.name from animal_ins i
+  left join animal_outs o on o.animal_id = i.animal_id
+  where i.sex_upon_intake like 'I%' AND o.sex_upon_outcome like 'N%' ||
+  i.sex_upon_intake like 'I%' AND  o.sex_upon_outcome like 'S%';
+
+  SELECT i.animal_id, i.animal_type, i.name from animal_ins i
+  inner join animal_outs o on o.animal_id = i.animal_id and i.SEX_UPON_INTAKE != o.SEX_UPON_OUTCOME;
+
+  SELECT animal_id , name, SEX_UPON_INTAKE from animal_ins
+  where name = 'Lucy'or name = 'Ella'or name ='Pickle'or name = 'Rogan'or name = 'Sabrina'or name = 'Mitty';
+
+  SELECT animal_id , name, SEX_UPON_INTAKE from animal_ins
+  where name in( 'Lucy' ,'Ella','Pickle','Rogan' ,'Sabrina', 'Mitty');
+
+  SELECT animal_id , name from animal_ins where name like '%el%' and animal_type = 'Dog' order by name ;
+
+  //20220602
+  SELECT animal_id, name ,
+  case   when SEX_UPON_INTAKE not like 'Intact%' then 'O' else 'X' END 증성화
+  from animal_ins ORDER BY ANIMAL_ID;
+
+  SELECT animal_id, name ,
+  IF(SEX_UPON_INTAKE not LIKE 'Intact%','O','X') AS '중성화'
+  from animal_ins ORDER BY ANIMAL_ID;
