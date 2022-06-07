@@ -87,3 +87,6 @@ SELECT animal_id from animal_ins where name is null order by animal_id;
   //20220606
   SELECT o.animal_id, o.name from animal_outs o inner join animal_ins i
   on o.animal_id = i.animal_id  order by o.datetime - i.datetime desc limit 2;
+
+  //20220607
+  SELECT animal_id , name , date_format (datetime, '%Y-%m-%d') as 날짜 from animal_ins ;
