@@ -40,7 +40,7 @@ public class q3120_2_그리디 {
                     abs -= 10;
                     count++;
                 }
-                else if (abs >= 8) {
+                else if (abs > 8) {
                     abs += 1;
                     count++;
                 }else if (abs > 3) {
