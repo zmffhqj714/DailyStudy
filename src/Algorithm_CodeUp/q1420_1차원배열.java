@@ -23,11 +23,6 @@ String name, score;
 
 
 
-        System.out.println(score[2]);
-
-          Arrays.sort(score);
-
-
     }
 
         }
