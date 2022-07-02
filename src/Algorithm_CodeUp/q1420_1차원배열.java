@@ -22,10 +22,6 @@ public class q1420_1차원배열 {
         }
 
 
-        //작은수를 찾고 작은 수 기준으로 정렬 : 기준이 하나라 다른 게 정렬이 안됨
-        // index에 1,2,3,4 를 줘야함 어케주냐ㅏ?그 숫자를
-
-
         Collections.sort(list);
         System.out.println(list.get(2).name);
 
